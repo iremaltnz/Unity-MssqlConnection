@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 public class MssqlConnection : MonoBehaviour
 {
-    public string connect =@"Data Source=IREM-\SQLSERVER; Initial Catalog=Unity-MssqlConnection; User ID=deneme2;Password=13579;Trusted_Connection=False;";
+    public string connect =@"Data Source=ServerName; Initial Catalog=DataBaseName; User ID=UserId;Password=Password;Trusted_Connection=False;";
     void Start()
     {
         SqlConnectionCheck();
