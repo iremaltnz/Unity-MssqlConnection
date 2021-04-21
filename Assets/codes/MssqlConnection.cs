@@ -6,7 +6,7 @@ using System.Data.SqlClient;
 
 public class MssqlConnection : MonoBehaviour
 {
-    public string connect =@"Data Source=ServerName; Initial Catalog=DataBaseName; User ID=UserId;Password=Password;Trusted_Connection=False;";
+    public string connect =@"Data Source=ServerName; Initial Catalog=DataBaseName; User ID=UserId; Password=Password; Trusted_Connection=False;";
     void Start()
     {
         SqlConnectionCheck();
@@ -47,17 +47,17 @@ public class MssqlConnection : MonoBehaviour
         SqlCommand sqlCommand = new SqlCommand("SELECT * FROM Gamers WHERE UserName='" + UserName + "' and Password='" + Password + "'", sqlConnection);
         SqlDataReader sqlDataReader = sqlCommand.ExecuteReader();
 
-        int sayac = 0;
+        int temp = 0;
 
         while (sqlDataReader.Read())
         {
-            sayac++;
+            temp++;
   
         }
 
         sqlConnection.Close();
 
-        if (sayac == 0)
+        if (temp == 0)
         {
  
             return false;
